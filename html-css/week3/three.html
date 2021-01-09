@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RD - Homework 3</title>
+    <link rel="stylesheet" href="style3.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="logo"><img src="images/logo.png" alt="logo"></div>
+        <nav>
+            <ul class="navigation">
+                <li><a href="three.html">Home</a></li>
+                <li><a href="three.html">About</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <form action="three.html" method="POST">
+            <h1>Sign up to yourcustomtailor.com</h1>
+            <h2>Step 3/3 - Time to learn about your preferences?</h2>
+            <span class="progress_label">
+                <label for="progress">Progress</label>
+            </span>
+            <div class="progress">
+                <progress id="progress" value="2" max="3"> 2 </progress>
+            </div>
+            <p>What kind of items are you interested in offers on?</p>
+            <div class="offers">
+                <div class="row">
+                    <span class="inputs">
+                        <label for="apparal">Apparal</label>
+                        <input type="checkbox" id="apparal" name="offers">
+                    </span>
+                    <span class="inputs">
+                        <label for="jewelry">Jewelry</label>
+                        <input type="checkbox" id="jewelry" name="offers">
+                    </span>
+                </div>
+                <div class="row">
+                    <span class="inputs">
+                        <label for="accessories">Accessories</label>
+                        <input type="checkbox" id="accessories" name="offers">
+                    </span>
+                    <span class="inputs">
+                        <label for="shoes">Shoes</label>
+                        <input type="checkbox" id="shoes" name="offers">
+                    </span>
+                </div>
+                <div class="inputs country_row">
+                    <label for="handbags">Handbags</label>
+                    <input type="checkbox" id="handbags" name="offers">
+                </div>
+            </div>
+            <p class="style_p">Choose the image that best resemble your style</p>
+            <div class="styles">
+                <span class="image">
+                    <label for="sporty">
+                        <span><img src="images/sporty.jpg" alt="sporty"></span>
+                        Sporty
+                        <input type="checkbox" id="sporty" name="style">
+                    </label>
+                </span>
+                <span class="image">
+                    <label for="bohemian">
+                        <span><img src="images/bohemian.jpg" alt="bohemian"></span>
+                        Bohemian
+                        <input type="checkbox" id="bohemian" name="style">
+                    </label>
+                </span>
+                <span class="image">
+                    <label for="grunge">
+                        <span><img src="images/grunge.jpg" alt="grunge"></span>
+                        Grunge
+                        <input type="checkbox" id="grunge" name="style">
+                    </label>
+                </span>
+                <span class="image">
+                    <label for="preppy">
+                        <span><img src="images/preppy.jpg" alt="preppy"></span>
+                        Preppy
+                        <input type="checkbox" id="preppy" name="style">
+                    </label>
+                </span>
+                <span class="image">
+                    <label for="punk">
+                        <span><img src="images/punk.jpg" alt="punk"></span>
+                        Punk
+                        <input type="checkbox" id="punk" name="style">
+                    </label>
+                </span>
+                <span class="image">
+                    <label for="streetwear">
+                        <span><img src="images/streetwear.jpg" alt="streetwear"></span>
+                        Streetwear
+                        <input type="checkbox" id="streetwear" name="style">
+                    </label>
+                </span>
+                <span class="image">
+                    <label for="classic">
+                        <span><img src="images/classic.jpg" alt="classic"></span>
+                        Classic
+                        <input type="checkbox" id="classic" name="style">
+                    </label>
+                </span>
+                <span class="image">
+                    <label for="casual">
+                        <span><img src="images/casual.jpg" alt="casual"></span>
+                        Casual
+                        <input type="checkbox" id="casual" name="style">
+                    </label>
+                </span>
+            </div>
+            <div class="button">
+                <button type="submit">SUBMIT</button>
+            </div>
+        </form>
+    </main>
+</body>
+
+</html>

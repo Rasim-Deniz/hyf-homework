@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RD - Homework 3</title>
+    <link rel="stylesheet" href="style2.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="logo"><img src="images/logo.png" alt="logo"></div>
+        <nav>
+            <ul class="navigation">
+                <li><a href="two.html">Home</a></li>
+                <li><a href="two.html">About</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <form action="three.html" method="POST">
+            <h1>Sign up to yourcustomtailor.com</h1>
+            <h2>Step 2/3 - how can we reach you?</h2>
+            <span class="progress_label">
+                <label for="progress">Progress</label>
+            </span>
+            <div class="progress">
+                <progress id="progress" value="1" max="3"> 1 </progress>
+            </div>
+            <p>We will probably need to stay in touch somehow. Let is know how we can reach you?</p>
+            <div class="required">
+                <div class="row">
+                    <span class="inputs">
+                        <label for="email">Email*</label>
+                        <input type="email" id="email" name="mail" required>
+                    </span>
+                    <span class="inputs">
+                        <label for="phone">Phone*</label>
+                        <input type="tel" id="phone" name="phone" pattern="[1-9]{1}[0-9]{9}" minlength="10"
+                            maxlength="10">
+                    </span>
+                </div>
+                <div class="column">
+                    <span class="inputs">
+                        <label for="password">Password*</label>
+                        <input type="password" id="password" name="password" minlength="10" pattern="^[a-zA-Z]+$"
+                            title="Minimum 10 characters, letters only, lowercase or uppercase" required>
+                    </span>
+                    <span class="inputs">
+                        <label for="re-password">Re-enter Password*</label>
+                        <input type="password" id="re-password" name="re-enter-password" minlength="10"
+                            pattern="^[a-zA-Z]+$" title="Minimum 10 characters, letters only, lowercase or uppercase"
+                            required>
+                    </span>
+                </div>
+                <p class="newsletter">I want to sign up for the newsletter</p>
+                <div class="row radio">
+                    <span>
+                        <label for="week">Weekly news</label>
+                        <input type="radio" id="week" name="news" value="weekly_news" required>
+                    </span>
+                    <span>
+                        <label for="month">Monthly news</label>
+                        <input type="radio" id="month" name="news" value="monthly_news">
+                    </span>
+                    <span>
+                        <label for="no_news">Don't send me news</label>
+                        <input type="radio" id="no_news" name="news" value="no_news">
+                    </span>
+                </div>
+                <div class="button">
+                    <a
+                        href="https://htmlpreview.github.io/?https://github.com/Rasim-Deniz/hyf-homework/blob/master/html-css/week3/three.html">
+                        <button>Next step</button>
+                    </a>
+                </div>
+            </div>
+        </form>
+    </main>
+</body>
+
+</html>

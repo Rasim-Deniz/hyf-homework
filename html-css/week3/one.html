@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RD - Homework 3</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="logo"><img src="images/logo.png" alt="logo"></div>
+        <nav>
+            <ul class="navigation">
+                <li><a href="one.html">Home</a></li>
+                <li><a href="one.html">About</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <form action="two.html" method="POST">
+            <h1>Sign up to yourcustomtailor.com</h1>
+            <p>We can’t wait to help you improve your life-style and gain the attention from people around
+                you!
+                <br>
+                Sign up below to save up to 70% on apparel, hand-bags and cosmetics. Our agents are busy
+                picking the best offers that match your preferences and style. Every week we will send you a
+                hand-picked selection - we just need to know a few details about your first…
+            </p>
+            <div class="step_div">
+                <h2>Step 1/3 - tell us who you are?</h2>
+                <span class="progress_label">
+                    <label for="progress">Progress</label>
+                </span>
+                <div class="progress">
+                    <progress id="progress" value="0" max="3"> 0 </progress>
+                </div>
+                <p class="meet">Nice to meet you. Let’s spend a minute to get to know each other? Please enter the
+                    following:
+                </p>
+            </div>
+            <div class="required">
+                <div class="row">
+                    <span class="inputs">
+                        <label for="fname">First name*</label>
+                        <input type="text" id="fname" name="first_name" required>
+                    </span>
+                    <span class="inputs">
+                        <label for="lname">Last name*</label>
+                        <input type="text" id="lname" name="last_name" required>
+                    </span>
+                </div>
+                <div class="inputs country_row">
+                    <label for="country">Country*</label>
+                    <select name="country" id="country" required>
+                        <option value disabled selected>-None-</option>
+                        <option value="denmark">Denmark</option>
+                        <option value="turkey">Turkey</option>
+                    </select>
+                </div>
+                <div class="row">
+                    <span class="inputs">
+                        <label for="address">Street address*</label>
+                        <input type="text" id="address" name="street_address" required>
+                    </span>
+                    <span class="inputs">
+                        <label for="pcode">Post code*</label>
+                        <input type="text" id="pcode" name="post_code" minlength="4" maxlength="4" pattern="\d*"
+                            required>
+                    </span>
+                </div>
+            </div>
+            <div class="description">
+                <label for="description">
+                    Profile description
+                    <p class="desc_p">Please provide a short description of yourself to be displayed on our social
+                        community pages.
+                    </p>
+                </label>
+                <textarea id="description" name="profile_description" cols="20" rows="5" maxlength="500"></textarea>
+            </div>
+            <p>Use the same address for billing and shipping? Uncheck below to fill out a separate shipping address.
+            </p>
+            <div class="row">
+                <span class=check>
+                    <label for="shipping">Shipping address</label>
+                    <input type="checkbox" id="shipping" name="shipping_address" checked required>
+                </span>
+                <a
+                    href="https://htmlpreview.github.io/?https://github.com/Rasim-Deniz/hyf-homework/blob/master/html-css/week3/two.html">
+                    <button>Next step</button>
+                </a>
+            </div>
+        </form>
+    </main>
+</body>
+
+</html>
