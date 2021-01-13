@@ -42,7 +42,7 @@ body {
 	scroll-behavior: smooth;
 	text-rendering: optimizeSpeed;
 	line-height: 1.5;
-	background: linear-gradient(217deg, #5680E9, #84CEEB 70.71%), linear-gradient(127deg, #5AB9EA, #C1C8E4 70.71%), linear-gradient(336deg, #8860D0, #8760D0 70.71%);
+	background-image: linear-gradient(217deg, #0B0C10, #1F2833 70.71%), linear-gradient(127deg, #C5C6C7, #C5C6C8 70.71%), linear-gradient(336deg, #66FCF1, #45A29E 70.71%);
 	color: white;
 	font-family: "Roboto", sans-serif;
 }
@@ -98,19 +98,19 @@ main {
 
 h1,
 h2 {
-	color: #8860D0;
+	color: #66FCF1;
 	margin: 5px 5px;
 }
 
 a {
-	color: white;
+	color: #66FCF1;
 	text-decoration: none;
 	font-weight: 700;
 }
 
 label {
 	font-weight: 700;
-	color: #8860D0;
+	color: #66FCF1;
 	padding: 0 10px;
 }
 
@@ -123,7 +123,6 @@ header {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	border-bottom: 1px solid #C1C8E4;
 	padding: 1% 10%;
 }
 
@@ -134,7 +133,7 @@ header {
 }
 
 form {
-	padding: 3% 0;
+	padding: 2% 2%;
 }
 
 .step_div {
@@ -194,6 +193,10 @@ progress[value]::-webkit-progress-value {
 	display: flex;
 	justify-content: space-between;
 }
+.column {
+	display: flex;
+	flex-direction: column;
+}
 
 .country_row {
 	width: 45%;
@@ -209,12 +212,17 @@ progress[value]::-webkit-progress-value {
 	display: flex;
 	width: 25%;
 	flex: 1;
+	padding-top: 10px;
 }
 
 .inputs input,
 .inputs select {
 	flex-grow: 1;
 	width: 50%;
+	height: 30px;
+}
+.newsletter {
+	margin-top: 10px;
 }
 
 .description {
@@ -239,6 +247,19 @@ progress[value]::-webkit-progress-value {
 textarea {
 	width: 50%;
 }
+.radio {
+	margin: 20px 0;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	width: 50%;
+}
+
+.radio input {
+	width: 15px;
+	height: 15px;
+}
+
 
 .check {
 	width: 50%;
@@ -256,6 +277,29 @@ textarea {
 	width: 30px;
 	height: 30px;
 }
+.styles {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+}
+
+.image {
+	text-align: center;
+}
+
+.image img {
+	margin: 15px auto;
+	width: 350px;
+}
+
+.image input {
+	width: 10%;
+	height: 15px;
+}
+.button {
+	display: flex;
+	justify-content: flex-end;
+}
+
 
 button {
 	padding: 30px 100px;
@@ -288,5 +332,19 @@ button:hover {
 	.description,
 	textarea {
 		width: 100%;
+	}
+	.radio {
+		width: 100%;
+		justify-content: space-around;
+	}
+	.style_p {
+		text-align: center;
+	}
+	.image {
+		grid-column: 2/4;
+	}
+	.image img {
+		width: 100%;
+		height: auto;
 	}
 }
