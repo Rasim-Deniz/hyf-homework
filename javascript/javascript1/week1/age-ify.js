@@ -11,4 +11,4 @@ Step2 freecodecamp username: https://www.freecodecamp.org/rasimdeniz */
 const yearOfBirth = 1996;
 const yearFuture = 2100;
 const age = yearFuture - yearOfBirth;
-console.log("You will be " + age + "years old in " + yearFuture);
+console.log("You will be " + age + " years old in " + yearFuture);
