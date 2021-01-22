@@ -5,15 +5,15 @@ Your friends know the width, the height and the depth of the house and the garde
 Lets help them figure out if they paid too much */
 
 class House {
-    constructor(width, height, depth, gardenSizeInM2, houseCost, x, y, z) {
+    constructor(width, height, depth, gardenSizeInM2, houseCost, x = 2.5, y = 1000, z = 300) {
         this.width = width;
         this.height = height;
         this.depth = depth;
         this.gardenSizeInM2 = gardenSizeInM2;
         this.houseCost = houseCost;
-        this.x = 2.5;
-        this.y = 1000;
-        this.z = 300;
+        this.x = x;
+        this.y = y;
+        this.z = z;
     }
     get price() {
         return this.priceCalculation();
