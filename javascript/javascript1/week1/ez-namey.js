@@ -6,6 +6,6 @@
 
 const firstWords = ["Center", "Creative", "Data", 'Founder', "Alpha", "Infinite", "Geo", "Inside", "Simple", "Sphere"];
 const secondWords = ["Webnet", "Weborate", "Webaboon", "Websiter", "Webfore", "Weberq", "Webitio", "Webarnup", "Weblogy", "Weboratory"];
-const randomNumber = Math.floor(Math.random() * 10) + 0;
+const randomNumber = Math.floor(Math.random() * firstWords.length);
 let startupName = firstWords[randomNumber] + secondWords[randomNumber];
 console.log("The startup: " + startupName + " contains " + startupName.length + " characters");   
