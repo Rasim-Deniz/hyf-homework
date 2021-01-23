@@ -6,7 +6,7 @@ Dogs age can either be measured in dog years or in human years, this we want to 
 
 const dogYearOfBirth = 2021;
 const dogYearFuture = 2042;
-const dogYear = Math.round(16 * Math.log(dogYearFuture - dogYearOfBirth) + 31);
+const dogYear = 7 * (dogYearFuture - dogYearOfBirth);
 const shouldShowResultInDogYears = true;
 
 if (shouldShowResultInDogYears) {
