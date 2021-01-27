@@ -1,7 +1,7 @@
 // FLIGHT BOOKING FULLNAME FUNCTION
 
 function getFullname(firstname, surname, useFormalName, gender) {
-    if (firstname && surname && useFormalName == true && gender) {
+    if (firstname && surname && useFormalName === true && gender) {
         if (gender == "male") {
             return "Lord " + "Mr." + firstname + ' ' + surname;
         }
@@ -9,7 +9,7 @@ function getFullname(firstname, surname, useFormalName, gender) {
             return "Ms." + firstname + ' ' + surname;
         }
     }
-    else if (firstname && surname && useFormalName == true) {
+    else if (firstname && surname && useFormalName === true) {
         return "Lord " + firstname + ' ' + surname;
     }
     else if (firstname && surname) {
@@ -72,21 +72,23 @@ const class07Students = [];
 function addStudentToClass(studentName) {
     if (class07Students.length < 6 && studentName !== "Queen" && studentName) {
         class07Students.push(studentName);
-        return class07Students;
+        return studentName + " is added to the class 07";
     }
     else if (studentName === "Queen") {
         class07Students.push(studentName);
-        return class07Students;
-    }
-    else if (class07Students.length < 6) {
-        return "Enter a valid student name";
+        return "Queen is added to the class 07";
     }
     else if (checkNames(studentName)) {
         return "Student " + studentName + " is already in the class";
     }
-    else {
-        return "Cannot add more students to class 07";
+    else if (!studentName) {
+        return "Enter a valid name";
     }
+    else {
+        console.log("Cannot add more students to class 07");
+        return false;
+    }
+
 }
 
 function checkNames(studentName) {
