@@ -88,12 +88,12 @@ const notes = [];
 // Save a note
 
 function saveNote(content, id) {
-    const newObjects = { content, id };
+    const note = { content, id };
     if (content === "" || typeof id !== "number") {
         console.log("Please enter information as requested");
     }
     else {
-        notes.push(newObjects);
+        notes.push(note);
     }
 }
 
