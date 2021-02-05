@@ -63,9 +63,9 @@ const seriesDurations = [
 const date1 = new Date(1996, 1, 13);
 const date2 = new Date(date1.getFullYear() + 80, 1, 13);
 const seconds = Math.floor((date2 - date1) / 1000);
-var daytoSeconds = 24 * 60 * 60;
-var hourstoSeconds = 60 * 60;
-var minutestoSeconds = 60;
+const daytoSeconds = 24 * 60 * 60;
+const hourstoSeconds = 60 * 60;
+const minutestoSeconds = 60;
 function logOutSeriesText(obj) {
     var sum = 0;
     for (var i = 0; i < obj.length; i++) {
