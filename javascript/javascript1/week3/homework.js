@@ -68,7 +68,7 @@ const hourstoSeconds = 60 * 60;
 const minutestoSeconds = 60;
 function logOutSeriesText(obj) {
     var sum = 0;
-    for (var i = 0; i < obj.length; i++) {
+    for (let i = 0; i < obj.length; i++) {
         const series = obj[i];
         let secondsPerSeries = (series.days * daytoSeconds) + (series.hours * hourstoSeconds) + (series.minutes * minutestoSeconds);
         let percentage = ((100 * secondsPerSeries) / seconds).toFixed(3);
@@ -104,7 +104,7 @@ console.log(notes); // [{content: 'Pick up groceries', id: 1}, {content: 'Do lau
 // Get a note
 
 function getNote(id) {
-    for (var i = 0; i < notes.length; i++) {
+    for (let i = 0; i < notes.length; i++) {
         if (id === notes[i].id) {
             return notes[i];
         }
@@ -117,7 +117,7 @@ console.log(firstNote); // {content: 'Pick up groceries', id: 1}
 // Log out notes
 
 function logOutNotesFormatted() {
-    for (var j = 0; j < notes.length; j++) {
+    for (let j = 0; j < notes.length; j++) {
         console.log(`The note with id: ${notes[j].id}, has the following note text: ${notes[j].content}`);
     }
 }
@@ -184,11 +184,11 @@ showStatus(activities); // will log out this "You have added 3 activities. They 
 
 function findMaxDuration(activities) {
     const durationArray = [];
-    for (var j = 0; j < activities.length; j++) {
+    for (let j = 0; j < activities.length; j++) {
         durationArray.push(activities[j].duration);
     }
     var max = Math.max(...durationArray);
-    for (var k = 0; k < activities.length; k++) {
+    for (let k = 0; k < activities.length; k++) {
         if (activities[k].duration === max) {
             var mostusedActivity = activities[k].activity;
         }
