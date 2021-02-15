@@ -76,7 +76,6 @@ function getReply(command) {
             return `Nice to meet you ${userName}`;
         }
     }
-
     else if (newCommand === "what is my name") {
         if (!userName) {
             return `I don't know you.`;
@@ -84,29 +83,24 @@ function getReply(command) {
             return `Your name is ${userName}`;
         }
     }
-
     else if (newCommand.startsWith("add") && newCommand.includes("todo")) {
         todo = commandArray.slice(1, commandArray.indexOf("to"));
         todo = todo.join(' ');
         todoList.push(todo);
         return `${todo} added to your todo`;
     }
-
     else if (newCommand.startsWith("remove") && newCommand.includes("todo")) {
         todo = commandArray.slice(1, commandArray.indexOf("from"));
         todo = todo.join(' ');
         todoList.splice(todoList.indexOf(todo), 1);
         return `removed ${todo} from your todo`;
     }
-
     else if (newCommand === "what is on my todo?") {
         return `you have ${todoList.length} todos - ${todoList.join(" and ")}`;
     }
-
     else if (newCommand === "what day is it today?") {
         return `${today.getDate()}. of ${month} ${today.getFullYear()}`;
     }
-
     else if (newCommand.startsWith("what is") && newCommand.includes("+") || newCommand.includes("-") || newCommand.includes("*") || newCommand.includes("/")) {
         let calcArray = commandArray.slice(commandArray.indexOf("is") + 1);
         const firstNum = parseInt(calcArray[0]);
@@ -126,7 +120,6 @@ function getReply(command) {
             return firstNum / secondNum;
         }
     }
-
     else if (newCommand.includes("set a timer")) {
         let timerArray = commandArray.slice(commandArray.indexOf("for") + 1);
         const minutes = parseInt(timerArray[0]);
@@ -137,7 +130,6 @@ function getReply(command) {
             console.log("Timer done");
         }
     }
-
     // EXTRA FEATURE 
     else {
         let cleanText = command.toLowerCase().replace(/[^\w\s\d]/gi, "");
