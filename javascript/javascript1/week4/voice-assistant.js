@@ -116,7 +116,7 @@ function getReply(command) {
         else if (operator == '*') {
             return firstNum * secondNum;
         }
-        else {
+        else if (operator == '/') {
             return firstNum / secondNum;
         }
     }
