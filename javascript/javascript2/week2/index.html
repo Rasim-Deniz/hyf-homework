@@ -1,0 +1,53 @@
+<head>
+  <title>HyfBay</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" type="text/css" href="main.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+    rel="stylesheet"
+  />
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <div class="navbar">
+        <div class="logo">
+          <img src="icon.png" alt="logo" />
+        </div>
+        <nav>
+          <ul>
+            <li><a href="">Home</a></li>
+            <li><a href="">About</a></li>
+            <li><a href="">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="main-container">
+      <h1>Search Our Products In Your Favor</h1>
+      <div class="row row-2">
+        <div class="input-container">
+          <input id="productInput" placeholder="Search for a product" />
+          <input id="priceInput" placeholder="Set maximum price" />
+        </div>
+        <div class="select-container">
+          <select name="sortProducts" id="sortProducts">
+            <option disabled selected hidden>--- Select ---</option>
+            <option value="price">Sort by price</option>
+            <option value="rating">Sort by rating</option>
+          </select>
+        </div>
+      </div>
+      <ul class="ul-class row"></ul>
+    </div>
+  </main>
+  <footer>
+    <p class="copyright">&copy Copyright 2021 - Rasim Deniz</p>
+  </footer>
+  <script src="hyfBayHelpers.js"></script>
+  <script src="main.js"></script>
+</body>
