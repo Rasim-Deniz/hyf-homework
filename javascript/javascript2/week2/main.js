@@ -52,13 +52,7 @@ selectedOption.addEventListener("change", function () {
   let sortedProducts = products.sort(function (a, b) {
     let firstValue = a[userOption];
     let secondValue = b[userOption];
-    if (firstValue < secondValue) {
-      return 1;
-    } else if (firstValue > secondValue) {
-      return -1;
-    } else {
-      return 0;
-    }
+    return firstValue - secondValue;
   });
   list.innerHTML = "";
   renderProducts(sortedProducts);
