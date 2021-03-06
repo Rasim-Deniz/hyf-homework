@@ -51,7 +51,6 @@
             lCounter++;
             lCount.innerHTML = lCounter;
         }
-
     };
 
     function getWinner() {
@@ -100,6 +99,5 @@
             } else {
                 pCountdown.innerHTML = time;
             }
-
         }
     }

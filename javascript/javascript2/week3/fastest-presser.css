@@ -6,7 +6,6 @@ body {
     display: flex;
     justify-content: center;
     font-family: sans-serif;
-
 }
 
 .main-container {
@@ -75,7 +74,6 @@ h1 {
         -webkit-transform-origin: center center;
         -webkit-transform: rotate(-5deg);
     }
-
 }
 
 button {
