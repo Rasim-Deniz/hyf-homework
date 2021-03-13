@@ -72,7 +72,7 @@ button:focus {
 }
 
 .gif-button {
-    width: 25%;
+    width: 15%;
     border: none;
     height: 70px;
     padding: 10px;
@@ -109,5 +109,14 @@ button:focus {
         width: 40%;
         height: 20%;
         font-size: 15px;
+    }
+
+    .gif-input {
+        font-size: 16px;
+        width: 60%;
+    }
+
+    .gifs-container {
+        width: 70%;
     }
 }
