@@ -87,33 +87,33 @@ let weather = {
     backgroundChange: function (main) {
         let backgroundHolder = document.querySelector(".card");
         if (main == "Thunderstorm") {
-            backgroundHolder.style.backgroundImage = "url('/gifs/thunderstorm.gif')";
+            backgroundHolder.style.backgroundImage = "url('gifs/thunderstorm.gif')";
         } else if (main == "Drizzle") {
-            backgroundHolderstyle.backgroundImage = "url('/gifs/drizzle.gif')";
+            backgroundHolderstyle.backgroundImage = "url('gifs/drizzle.gif')";
         } else if (main == "Rain") {
-            backgroundHolder.style.backgroundImage = "url('/gifs/rain.gif')";
+            backgroundHolder.style.backgroundImage = "url('gifs/rain.gif')";
         } else if (main == "Snow") {
-            backgroundHolderstyle.backgroundImage = "url('/gifs/snow.gif')";
+            backgroundHolderstyle.backgroundImage = "url('gifs/snow.gif')";
         } else if (main == "Mist") {
-            backgroundHolder.style.backgroundImage = "url('/gifs/mist.gif')";
+            backgroundHolder.style.backgroundImage = "url('gifs/mist.gif')";
         } else if (main == "Smoke") {
-            backgroundHolder.style.backgroundImage = "url('/gifs/mist.gif')";
+            backgroundHolder.style.backgroundImage = "url('gifs/mist.gif')";
         } else if (main == "Haze") {
-            backgroundHolder.style.backgroundImage = "url('/gifs/mist.gif')";
+            backgroundHolder.style.backgroundImage = "url('gifs/mist.gif')";
         } else if (main == "Dust") {
-            backgroundHolder.style.backgroundImage = "url('/gifs/dust.gif')";
+            backgroundHolder.style.backgroundImage = "url('gifs/dust.gif')";
         } else if (main == "Fog") {
-            backgroundHolder.style.backgroundImage = "url('/gifs/fog.gif')";
+            backgroundHolder.style.backgroundImage = "url('gifs/fog.gif')";
         } else if (main == "Ash") {
-            backgroundHolder.style.backgroundImage = "url('/gifs/ash.gif')";
+            backgroundHolder.style.backgroundImage = "url('gifs/ash.gif')";
         } else if (main == "Squall") {
-            backgroundHolder.style.backgroundImage = "url('/gifs/tornado.gif')";
+            backgroundHolder.style.backgroundImage = "url('gifs/tornado.gif')";
         } else if (main == "Tornado") {
-            backgroundHolder.style.backgroundImage = "url('/gifs/tornado.gif')";
+            backgroundHolder.style.backgroundImage = "url('gifs/tornado.gif')";
         } else if (main == "Clear") {
-            backgroundHolder.style.backgroundImage = "url('/gifs/clear.gif')";
+            backgroundHolder.style.backgroundImage = "url('gifs/clear.gif')";
         } else if (main == "Clouds") {
-            backgroundHolder.style.backgroundImage = "url('/gifs/cloud.gif')";
+            backgroundHolder.style.backgroundImage = "url('gifs/cloud.gif')";
         }
     },
     timeConverter: function (unix) {
