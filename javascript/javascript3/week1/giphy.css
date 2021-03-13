@@ -38,7 +38,7 @@ h1 {
 .gifs-container {
     display: flex;
     flex-direction: column;
-    width: 44%;
+    width: 33%;
     gap: 10px;
     margin: 10px 0;
 }
@@ -57,7 +57,7 @@ img {
     box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11),
         0 1px 4px rgba(0, 0, 0, 0.08);
     margin: 20px 0;
-    width: 40%;
+    width: 30%;
     height: 40px;
     font-size: 18px;
 }
@@ -106,7 +106,7 @@ button:focus {
 
 @media only screen and (max-width: 500px) {
     .gif-button {
-        width: 40%;
+        width: 30%;
         height: 20%;
         font-size: 15px;
     }
