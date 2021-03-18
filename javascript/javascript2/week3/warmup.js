@@ -31,8 +31,8 @@ const longitude = document.getElementById("longitude");
 logLocationButton.addEventListener("click", () => navigator.geolocation.getCurrentPosition(findLocation));
 
 function findLocation(location) {
-    let latitudeInfo = location.coords.latitude;
-    let longitudeInfo = location.coords.longitude;
+    const latitudeInfo = location.coords.latitude;
+    const longitudeInfo = location.coords.longitude;
     latitude.innerHTML = `This is the latitude ${latitudeInfo}.`
     longitude.innerHTML = `This is the longitude ${longitudeInfo}.`
 };
@@ -43,8 +43,8 @@ const mapDiv = document.getElementById("map");
 
 mapButton.addEventListener("click", () => {
     navigator.geolocation.getCurrentPosition(function (position) {
-        let lat = position.coords.latitude;
-        let lng = position.coords.longitude;
+        const lat = position.coords.latitude;
+        const lng = position.coords.longitude;
         logMap(lat, lng);
     });
 });

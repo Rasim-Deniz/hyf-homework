@@ -1,5 +1,5 @@
     const timer = document.getElementById("time");
-    const button = document.getElementById("button-id");
+    const button = document.getElementById("start-game");
     const sCount = document.getElementById("s-count");
     const lCount = document.getElementById("l-count");
     const pCountdown = document.getElementById("countdown");
