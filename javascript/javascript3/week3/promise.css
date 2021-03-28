@@ -1,0 +1,35 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 50px;
+    min-height: 100vh;
+    font-size: 100%;
+    line-height: 1.5;
+    background: rgb(25, 159, 158);
+}
+
+.wrapper {
+    width: 600px;
+    margin: 50px auto;
+    background: #fff;
+    padding: 2em;
+}
+
+.list {
+    margin-left: 1.2em;
+    font-size: 0.7em;
+    color: black;
+    list-style: inside;
+    margin-top: 0.5em;
+}
+
+.repos {
+    list-style: none;
+    font-size: 1.5em;
+    font-weight: 400;
+    color: rgb(25, 159, 158);
+}
