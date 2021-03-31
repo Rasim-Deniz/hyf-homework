@@ -1,37 +1,39 @@
 let weather = {
     "apiKey": "fd548f55ee5a12f2b7b63bfc72cd0260",
     fetchWeather: function (city) {
-        fetch(
-                "https://api.openweathermap.org/data/2.5/weather?q=" +
-                city +
-                "&units=metric&appid=" +
-                this.apiKey
-            )
+        fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${this.apiKey}`)
+            .then(this.handleErrors)
             .then((response) => response.json())
-            .then((data) => this.displayWeather(data));
+            .then((data) => this.displayWeather(data))
+            .catch(error => console.log(error));
     },
     fetchWeatherWithLocation: function () {
         navigator.geolocation.getCurrentPosition(function (position) {
             const lat = position.coords.latitude;
             const lon = position.coords.longitude;
-            fetch(
-                    "https://api.openweathermap.org/data/2.5/weather?lat=" +
-                    lat + "&lon=" + lon +
-                    "&units=metric&appid=" +
-                    weather.apiKey
-                )
+            fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${weather.apiKey}`)
+                .then(this.handleErrors)
                 .then((response) => response.json())
-                .then((data) => weather.displayWeather(data));
+                .then((data) => weather.displayWeather(data))
+                .catch(error => console.log(error));
         });
     },
     searchWithJson: function () {
         fetch('cities-of-turkey.json')
+            .then(this.handleErrors)
             .then(response => response.json())
             .then(data => {
                 const random = Math.floor(Math.random() * data.length);
                 const randomTrCity = data[random].name;
                 this.fetchWeather(randomTrCity);
-            });
+            })
+            .catch(error => console.log(error));
+    },
+    handleErrors: function (response) {
+        if (!response.ok) {
+            throw Error(response.statusText);
+        }
+        return response;
     },
     displayWeather: function (data) {
         const {
@@ -59,12 +61,12 @@ let weather = {
         localStorage.clear();
         localStorage.setItem("name", name);
         document.querySelector(".city").innerText = name;
-        document.querySelector(".icon").src = "https://openweathermap.org/img/wn/" + icon + "@2x.png"
+        document.querySelector(".icon").src = `https://openweathermap.org/img/wn/${icon}@2x.png`;
         document.querySelector(".description").innerText = description;
-        document.querySelector(".temp").innerText = temp + "°C";
-        document.querySelector(".wind").innerText = "Wind Speed: " + speed + " km/h";
-        document.querySelector(".sunrise").innerText = "Sunrise: " + this.timeConverter(sunrise);
-        document.querySelector(".sunset").innerText = "Sunset: " + this.timeConverter(sunset);
+        document.querySelector(".temp").innerText = `${temp}°C`;
+        document.querySelector(".wind").innerText = `Wind Speed: ${speed} km/h`;
+        document.querySelector(".sunrise").innerText = `Sunrise: ${this.timeConverter(sunrise)}`;
+        document.querySelector(".sunset").innerText = `Sunset: ${this.timeConverter(sunset)}`;
         const map = new google.maps.Map(document.querySelector(".map"), {
             center: {
                 lat,
@@ -79,7 +81,6 @@ let weather = {
     search: function () {
         if (!document.querySelector(".search-bar").value) {
             alert("Enter a valid city name");
-            return
         } else {
             this.fetchWeather(document.querySelector(".search-bar").value);
         }
@@ -138,6 +139,4 @@ document.querySelector(".search-bar").addEventListener("keyup", function (event)
     }
 });
 document.querySelector(".search .locationButton")
-    .addEventListener("click", function () {
-        weather.fetchWeatherWithLocation();
-    });
+    .addEventListener("click", weather.fetchWeatherWithLocation);
