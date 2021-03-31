@@ -1,0 +1,122 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+h1 {
+    margin-bottom: 24px;
+    font-family: "Pacifico", cursive;
+    color: black;
+    font-size: 5rem;
+    text-align: center;
+    font-weight: lighter;
+}
+
+.card {
+    min-height: 80vh;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1.5rem 0;
+}
+
+.input-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.gifs-container {
+    display: flex;
+    flex-direction: column;
+    width: 33%;
+    gap: 10px;
+    margin: 10px 0;
+}
+
+img {
+    padding: 10px;
+    border: none;
+    box-shadow: 6px 6px 6px rgba(50, 50, 93, 0.11), 0 6px 6px rgba(0, 0, 0, 0.08);
+    outline: none;
+    margin: 10px 0;
+}
+
+.gif-input {
+    border: none;
+    padding: 15px;
+    box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11),
+        0 1px 4px rgba(0, 0, 0, 0.08);
+    margin: 20px 0;
+    width: 30%;
+    height: 40px;
+    font-size: 18px;
+}
+
+::placeholder {
+    color: #575757;
+}
+
+input:focus,
+button:focus {
+    outline: none;
+}
+
+.gif-button {
+    width: 15%;
+    border: none;
+    height: 70px;
+    padding: 10px;
+    box-shadow: 0 1px 3px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+    border-radius: 4px;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 0.025em;
+    color: #fff;
+    transition: all 0.15s ease;
+    text-shadow: 0 1px 3px rgba(36, 180, 126, 0.4);
+    outline: none;
+    cursor: pointer;
+    line-height: 1;
+    margin: 0 auto;
+    display: inline-block;
+    text-align: center;
+    background: #3ecf8e;
+}
+
+.gif-button:hover {
+    box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
+    transform: translateY(-1px);
+}
+
+.gif-button:active {
+    transform: translateY(1px);
+    box-shadow: 0 6px 12px -2px rgba(50, 50, 93, 0.25),
+        0 3px 7px -3px rgba(0, 0, 0, 0.3);
+}
+
+@media only screen and (max-width: 500px) {
+    .gif-button {
+        width: 30%;
+        height: 20%;
+        font-size: 15px;
+    }
+
+    .gif-input {
+        font-size: 16px;
+        width: 60%;
+    }
+
+    .gifs-container {
+        width: 70%;
+    }
+}
