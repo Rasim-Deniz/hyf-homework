@@ -36,4 +36,5 @@ const classMate3 = fetchUser("SlaviaF");
 // const classMate15 = fetchUser("WENCHO22");
 // const classMate16 = fetchUser("Hani-far");
 
-Promise.all([classMate1, classMate2, classMate3]);
+Promise.all([classMate1, classMate2, classMate3])
+    .catch(error => console.log(`Error in promises ${error}`));
