@@ -1,7 +1,8 @@
 -- Part 1: Working with tasks
 USE hyf_lesson1;
 
-insert into task (title, description, created, updated, due_date, status_id, user_id) values ('Do the homework', 'Hyf databases lesson2', NOW(),  NOW(), null, 1, 3);
+insert into task (title, description, created, updated, due_date, status_id, user_id) 
+    values ('Do the homework', 'Hyf databases lesson2', NOW(),  NOW(), null, 1, 3);
 
 SELECT *
 FROM task;
