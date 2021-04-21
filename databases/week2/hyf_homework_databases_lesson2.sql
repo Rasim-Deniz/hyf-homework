@@ -82,7 +82,7 @@ JOIN user ON
 user_task.user_id=user.id
 WHERE user.name LIKE "Maryrose%" AND month(created) = 09;
 
-SELECT monthname(created) AS month, COUNT(*) AS count
+SELECT month(created) AS month, COUNT(id) AS count
 FROM task
 GROUP BY month(created);
 
