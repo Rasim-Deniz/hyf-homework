@@ -1,6 +1,7 @@
 -- Data model
 CREATE DATABASE hyf_meal_sharing;
 USE hyf_meal_sharing;
+SET NAMES utf8mb4;
 
 CREATE TABLE `meal` (
 `id` int unsigned NOT NULL PRIMARY KEY AUTO_INCREMENT,
@@ -9,9 +10,9 @@ CREATE TABLE `meal` (
 `location` varchar(255) NOT NULL,
 `when` datetime NOT NULL,
 `max_reservations` int unsigned NOT NULL,
-`price` decimal NOT NULL,
+`price` decimal(5,2) NOT NULL,
 `created_date` date NOT NULL
-);
+)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 CREATE TABLE `reservation`(
 `id` int unsigned NOT NULL PRIMARY KEY AUTO_INCREMENT,
@@ -22,7 +23,7 @@ CREATE TABLE `reservation`(
 `contact_name` varchar(255) NOT NULL,
 `contact_email` varchar(255) NOT NULL, 
 CONSTRAINT `fk_meal` FOREIGN KEY (`meal_id`) REFERENCES `meal` (`id`)
-);
+)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 CREATE TABLE `review`(
 `id`int unsigned NOT NULL PRIMARY KEY AUTO_INCREMENT,
@@ -32,7 +33,7 @@ CREATE TABLE `review`(
 `stars` int unsigned NOT NULL,
 `created_date` date NOT NULL,
 CONSTRAINT `fk_review_meal` FOREIGN KEY (`meal_id`) REFERENCES `meal` (`id`)
-);
+)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Queries Meal
 insert into meal (title, description, location, `when`, max_reservations, price, created_date) 
@@ -128,11 +129,11 @@ SELECT *
 FROM meal
 WHERE price < 90;
 
-SELECT meal.title, meal.max_reservations, reservation.number_of_guests, reservation.created_date
+SELECT meal.title, meal.max_reservations, COALESCE(reservation.number_of_guests, 0) AS reserved , reservation.created_date
 FROM meal
-JOIN reservation ON
+LEFT JOIN reservation ON
 meal.id = reservation.meal_id
-HAVING meal.max_reservations > reservation.number_of_guests;
+HAVING meal.max_reservations > reserved;
 
 SELECT *
 FROM meal
