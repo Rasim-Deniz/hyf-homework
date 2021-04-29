@@ -1,0 +1,25 @@
+[{
+        "id": 1,
+        "title": "Indian food in the summer",
+        "maxNumberOfGuests": 5,
+        "description": "A nice night out eating delicious indian food",
+        "createdAt": "2019/12/7 14:34",
+        "price": 67
+    },
+    {
+        "id": 2,
+        "title": "Turkish Noahs Ark Pudding Asure",
+        "maxNumberOfGuests": 10,
+        "description": "Noah's ark pudding is a cornucopia of healthy ingredients such as dried fruits, legumes, and whole-grain wheat that are sweetened with sugar and fruit juices and cooked all together in one pot.",
+        "createdAt": "2021/04/29 12:27",
+        "price": 50
+    },
+    {
+        "id": 3,
+        "title": "Yaprak Sarma",
+        "maxNumberOfGuests": 50,
+        "description": "Yaprak sarma is a traditional dish in Turkey that is typically grape vine leaves rolled and filled with minced meat.",
+        "createdAt": "2021/04/29 12:34",
+        "price": 100
+    }
+]
