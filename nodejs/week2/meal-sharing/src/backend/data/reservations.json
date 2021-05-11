@@ -1,0 +1,19 @@
+[{
+    "id": 1,
+    "name": "Benjamin Hughes",
+    "email": "benjamin@hughes.dk",
+    "mealId": 1
+  },
+  {
+    "id": 2,
+    "name": "J.R.R. Tolkien",
+    "email": "tolkien@silmarillion.dk",
+    "mealId": 3
+  },
+  {
+    "id": 3,
+    "name": "Rasim Deniz",
+    "email": "rasimdeniz1996@gmail.com",
+    "mealId": 2
+  }
+]
