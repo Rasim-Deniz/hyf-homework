@@ -15,10 +15,10 @@ app.get("/calculator/:feature", (req, res) => {
     function falsyCheck() {
         const falsyInParam = !parameters.some(element => !element);
         const falsyInNum = !numbers.some(element => !element);
-        return falsyInParam && falsyInNum;
+        return parameters.length > 1 && (falsyInParam && falsyInNum);
     }
     let result = 0;
-    if (parameters.length > 1 && falsyCheck()) {
+    if (falsyCheck()) {
         if (feature === "add") {
             result = numbers.reduce((acc, number) => acc + number);
             res.send(`${result}`);
@@ -51,10 +51,10 @@ app.post("/calculator/:feature", (req, res) => {
     function falsyCheck() {
         const falsyInParam = !parameters.some(element => !element);
         const falsyInNum = !numbers.some(element => !element);
-        return falsyInParam && falsyInNum;
+        return parameters.length > 1 && (falsyInParam && falsyInNum);
     }
 
-    if (parameters.length > 1 && falsyCheck()) {
+    if (falsyCheck()) {
         if (feature === "add") {
             result = numbers.reduce((acc, number) => acc + number);
             res.send(`${result}`);
