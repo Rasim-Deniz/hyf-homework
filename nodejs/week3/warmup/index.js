@@ -7,18 +7,20 @@ app.use(express.urlencoded({
 
 app.get("/", (req, res) => res.send("nodejs week3 homework"));
 
+function getFalsyCheck(parameters, numbers) {
+    const falsyInParam = !parameters.some(element => !element);
+    const falsyInNum = !numbers.some(element => !element);
+    return parameters.length > 1 && (falsyInParam && falsyInNum);
+}
+
 app.get("/calculator/:feature", (req, res) => {
     const feature = req.params.feature;
     const parameters = Object.keys(req.query);
     const numbers = Object.values(req.query).flat().map(number => parseFloat(number));
+    const falsyCheck = getFalsyCheck(parameters, numbers);
 
-    function falsyCheck() {
-        const falsyInParam = !parameters.some(element => !element);
-        const falsyInNum = !numbers.some(element => !element);
-        return parameters.length > 1 && (falsyInParam && falsyInNum);
-    }
     let result = 0;
-    if (falsyCheck()) {
+    if (falsyCheck) {
         if (feature === "add") {
             result = numbers.reduce((acc, number) => acc + number);
             res.send(`${result}`);
@@ -47,14 +49,9 @@ app.post("/calculator/:feature", (req, res) => {
     const feature = req.params.feature;
     const parameters = Object.keys(req.body);
     const numbers = Object.values(req.body).flat().map(number => parseFloat(number));
+    const falsyCheck = getFalsyCheck(parameters, numbers);
 
-    function falsyCheck() {
-        const falsyInParam = !parameters.some(element => !element);
-        const falsyInNum = !numbers.some(element => !element);
-        return parameters.length > 1 && (falsyInParam && falsyInNum);
-    }
-
-    if (falsyCheck()) {
+    if (falsyCheck) {
         if (feature === "add") {
             result = numbers.reduce((acc, number) => acc + number);
             res.send(`${result}`);
