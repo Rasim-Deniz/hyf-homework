@@ -3,11 +3,11 @@ import Todo from "./todo";
 
 const TodoList = ({ todoList }) => {
   return (
-    <div>
+    <ul>
       {todoList.map((todo) => {
-        return <Todo todo={todo} />;
+        return <Todo key={todo.id} todo={todo} />;
       })}
-    </div>
+    </ul>
   );
 };
 
