@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "title": "Finish homework",
+    "deadline": "Fri 21-05-2021"
+  },
+  {
+    "id": 2,
+    "title": "Make Github account attractive",
+    "deadline": "Sat 22-05-2021"
+  },
+  {
+    "id": 3,
+    "title": "Look for jobs",
+    "deadline": "Sat 22-05-2021"
+  }
+]
