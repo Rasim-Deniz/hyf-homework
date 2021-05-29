@@ -2,16 +2,21 @@
   {
     "id": 1,
     "title": "Finish homework",
-    "deadline": "Fri 21-05-2021"
+    "done": false
   },
   {
     "id": 2,
-    "title": "Make Github account attractive",
-    "deadline": "Sat 22-05-2021"
+    "title": "Have a walk",
+    "done": true
   },
   {
     "id": 3,
     "title": "Look for jobs",
-    "deadline": "Sat 22-05-2021"
+    "done": false
+  },
+  {
+    "id": 4,
+    "title": "Eat dinner",
+    "done": false
   }
 ]

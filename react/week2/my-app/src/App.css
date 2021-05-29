@@ -12,24 +12,44 @@
 .todoListWrapper {
   margin: 20px auto 20px auto;
   width: 500px;
-  min-height: 600px;
+  min-height: 700px;
   border: 5px solid rgba(73, 204, 249, 1);
 }
 
 h1 {
   color: rgba(73, 204, 249, 1);
 }
-
-.todoWrapper {
-  border: 1px solid rgba(73, 204, 249, 1);
-  margin-bottom: 5px;
-  padding: 15px;
-  font-size: large;
-  font-weight: bold;
-  cursor: pointer;
+h2 {
+  margin-right: 30px;
+}
+ul li {
+  list-style: square;
+  margin: 10px 0;
+  padding: 10px;
 }
 
-.todoWrapper:hover {
-  background-color: rgba(73, 204, 249, 1);
-  color: black;
+.todoWrapper {
+  margin-bottom: 5px;
+  padding: 15px;
+  font-size: larger;
+  font-weight: bold;
+  float: left;
+  clear: left;
+}
+.todo {
+  cursor: pointer;
+}
+.strike {
+  text-decoration: line-through;
+}
+input {
+  width: 18px;
+  height: 18px;
+  transform: translateY(2px);
+}
+#count {
+  color: rgba(73, 204, 249, 1);
+}
+#delete {
+  transform: translateY(-2px);
 }
