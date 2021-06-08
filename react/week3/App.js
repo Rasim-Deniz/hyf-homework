@@ -1,69 +1,15 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import TodoList from "./components/todoList";
-import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import Counter from "./Counter.js";
+import AddTodo from "./addTodo.js";
 
 function Header() {
   return (
     <header>
       <h1>ToDo List</h1>
     </header>
-  );
-}
-
-function Counter() {
-  const [count, setCount] = useState(0);
-
-  useEffect(() => {
-    const counter = setTimeout(() => {
-      setCount((prev) => prev + 1);
-    }, 1000);
-
-    return () => {
-      clearTimeout(counter);
-    };
-  }, [count]);
-
-  return (
-    <p>
-      You have used <span id="count">{count}</span> seconds on this website
-    </p>
-  );
-}
-
-function AddTodo({ addTodo }) {
-  const [userInput, setUserInput] = useState("");
-  const [selectedDate, setSelectedDate] = useState(null);
-
-  const addInput = (e) => {
-    e.preventDefault();
-    addTodo(userInput, selectedDate);
-    setUserInput("");
-  };
-
-  return (
-    <form onSubmit={addInput}>
-      <div>
-        <label>Todo description</label>
-        <input
-          value={userInput}
-          type="text"
-          onChange={(e) => setUserInput(e.currentTarget.value)}
-        />
-      </div>
-      <div>
-        <label>Deadline</label>
-        <DatePicker
-          value={selectedDate}
-          selected={selectedDate}
-          onChange={(date) => setSelectedDate(date)}
-          dateFormat="yyyy/MM/dd"
-          minDate={new Date()}
-        />
-      </div>
-      <button>Add todo</button>
-    </form>
   );
 }
 

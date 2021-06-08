@@ -67,7 +67,7 @@ const TodoList = ({ todoList, updateText, removeTodo }) => {
 
 TodoList.propTypes = {
   id: PropTypes.number,
-  todoList: PropTypes.arrayOf(PropTypes.object),
+  todo: PropTypes.arrayOf(PropTypes.object),
   updateText: PropTypes.func,
   removeTodo: PropTypes.func,
 };
