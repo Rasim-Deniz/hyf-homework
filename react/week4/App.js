@@ -1,15 +1,15 @@
 import React from "react";
 import "./App.css";
-import StateProvider from "./context.js";
-import MainForm from "./mainForm.js";
+import UsersProvider from "./context.js";
+import SearchForm from "./inputForm.js";
+import UsersForm from "./displayForm.js";
 
 function App() {
   return (
-    <div>
-      <StateProvider>
-        <MainForm />
-      </StateProvider>
-    </div>
+    <UsersProvider>
+      <SearchForm />
+      <UsersForm />
+    </UsersProvider>
   );
 }
 

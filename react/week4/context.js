@@ -1,35 +1,40 @@
 import React, { createContext, useState } from "react";
 
-export const StateContext = createContext();
+export const Context = createContext();
 
-const StateProvider = (props) => {
+const UsersProvider = (props) => {
   const [loading, setLoading] = useState(false);
   const [users, setUsers] = useState([]);
 
-  const fetchUsers = (query) => {
-    setLoading(true);
-    fetch(`https://api.github.com/search/users?q=${query}`)
-      .then(handleErrors)
-      .then((res) => res.json())
-      .then((data) => setUsers(data.items))
-      .catch((err) => {
-        console.log(err);
-      })
-      .finally(() => {
-        setLoading(false);
-      });
-  };
   const handleErrors = (response) => {
     if (!response.ok) {
       throw Error(response.statusText);
     }
     return response;
   };
+
+  const fetchUsers = async (query) => {
+    try {
+      setLoading(true);
+      const response = await fetch(
+        `https://api.github.com/search/users?q=${query}`
+      );
+      handleErrors(response);
+      const data = await response.json();
+      const usersData = await data.items;
+      setUsers(usersData);
+    } catch (err) {
+      console.log(err);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
-    <StateContext.Provider value={{ users, loading, fetchUsers }}>
+    <Context.Provider value={{ users, loading, fetchUsers }}>
       {props.children}
-    </StateContext.Provider>
+    </Context.Provider>
   );
 };
 
-export default StateProvider;
+export default UsersProvider;
