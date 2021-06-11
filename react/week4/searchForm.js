@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
-import { Context } from "./context.js";
+import { UserSearchContext } from "./context.js";
 
 export default function SearchForm() {
-  const { fetchUsers } = useContext(Context);
+  const { userInput, setUserInput } = useContext(UserSearchContext);
 
   return (
     <div className="App">
@@ -10,8 +10,9 @@ export default function SearchForm() {
       <div>
         <input
           placeholder="Search for user"
-          onKeyUp={(e) => {
-            fetchUsers(e.target.value);
+          value={userInput}
+          onChange={(e) => {
+            setUserInput(e.target.value);
           }}
         />
       </div>

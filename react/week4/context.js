@@ -1,10 +1,13 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useEffect, useState } from "react";
+import SearchForm from "./searchForm";
+import UsersDisplay from "./usersDisplay";
 
-export const Context = createContext();
+export const UserSearchContext = createContext();
 
-const UsersProvider = (props) => {
-  const [loading, setLoading] = useState(false);
+const UsersSearch = () => {
+  const [isLoading, setIsLoading] = useState(false);
   const [users, setUsers] = useState([]);
+  const [userInput, setUserInput] = useState("");
 
   const handleErrors = (response) => {
     if (!response.ok) {
@@ -13,28 +16,33 @@ const UsersProvider = (props) => {
     return response;
   };
 
-  const fetchUsers = async (query) => {
-    try {
-      setLoading(true);
-      const response = await fetch(
-        `https://api.github.com/search/users?q=${query}`
-      );
-      handleErrors(response);
-      const data = await response.json();
-      const usersData = await data.items;
-      setUsers(usersData);
-    } catch (err) {
-      console.log(err);
-    } finally {
-      setLoading(false);
-    }
-  };
+  useEffect(() => {
+    (async () => {
+      try {
+        setIsLoading(true);
+        const response = await fetch(
+          `https://api.github.com/search/users?q=${userInput}`
+        );
+        handleErrors(response);
+        const data = await response.json();
+        const usersData = await data.items;
+        setUsers(usersData);
+      } catch (err) {
+        console.log(err);
+      } finally {
+        setIsLoading(false);
+      }
+    })();
+  }, [userInput]);
 
   return (
-    <Context.Provider value={{ users, loading, fetchUsers }}>
-      {props.children}
-    </Context.Provider>
+    <UserSearchContext.Provider value={{ users, userInput, setUserInput }}>
+      <SearchForm />
+      {isLoading ? <Loading /> : <UsersDisplay />}
+    </UserSearchContext.Provider>
   );
 };
-
-export default UsersProvider;
+function Loading() {
+  return <div>Loading... </div>;
+}
+export default UsersSearch;

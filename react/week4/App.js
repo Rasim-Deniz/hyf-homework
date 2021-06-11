@@ -1,15 +1,17 @@
 import React from "react";
 import "./App.css";
-import UsersProvider from "./context.js";
-import SearchForm from "./inputForm.js";
-import UsersForm from "./displayForm.js";
+import UsersSearch from "./context.js";
+import SearchForm from "./searchForm";
+import UsersDisplay from "./usersDisplay";
 
 function App() {
   return (
-    <UsersProvider>
-      <SearchForm />
-      <UsersForm />
-    </UsersProvider>
+    <div className="App">
+      <UsersSearch>
+        <SearchForm />
+        <UsersDisplay />
+      </UsersSearch>
+    </div>
   );
 }
 

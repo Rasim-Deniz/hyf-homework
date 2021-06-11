@@ -1,12 +1,11 @@
 import React, { useContext } from "react";
-import { Context } from "./context.js";
+import { UserSearchContext } from "./context.js";
 
-export default function UsersForm() {
-  const { users, loading } = useContext(Context);
+export default function UsersDisplay() {
+  const { users } = useContext(UserSearchContext);
 
   return (
     <div className="App">
-      {loading && <div>Loading... </div>}
       {users.length === 0 || !users ? (
         <h2>No results</h2>
       ) : (
