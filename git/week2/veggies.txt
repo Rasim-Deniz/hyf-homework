@@ -1,13 +1,10 @@
 aubergine
 onion
-<<<<<<< HEAD
 cabbage
 tomato
 carrot
 broccoli
 ginger
-=======
 beans
 tomato
 carrot
->>>>>>> f0fdd35c25037fac8d2ca60e57d012742e67d734
