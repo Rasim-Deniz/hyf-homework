@@ -1,5 +1,10 @@
 aubergine
 onion
+cabbage
+tomato
+carrot
+broccoli
+ginger
 beans
 tomato
 carrot
